@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,10 +38,10 @@ import resources.icons.TranslateIcon;
 public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	private static final int PADDING_FOR_COLUMN_NUMBER = 10;
 
-	private static final Color PRIMARY_SORT_GRADIENT_START = new Color(205, 227, 244);
-	private static final Color PRIMARY_SORT_GRADIENT_END = new Color(126, 186, 233);
-	private static final Color DEFAULT_GRADIENT_START = Color.WHITE;
-	private static final Color DEFAULT_GRADIENT_END = new Color(215, 215, 215);
+	private static final Color PRIMARY_SORT_GRADIENT_START = Color.GRAY;
+	private static final Color PRIMARY_SORT_GRADIENT_END = new Color(40, 40, 40);
+	private static final Color DEFAULT_GRADIENT_START = Color.GRAY;
+	private static final Color DEFAULT_GRADIENT_END = new Color(76, 76, 76);
 
 	private static final Icon UP_ICON =
 		ResourceManager.getScaledIcon(Icons.SORT_ASCENDING_ICON, 14, 14);
@@ -65,6 +65,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 		iconLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
 		textLabel.setBorder(createOSSpecificBorder());
+		textLabel.setForeground(Color.WHITE);
 
 		setLayout(new BorderLayout());
 		add(textLabel, BorderLayout.CENTER);
