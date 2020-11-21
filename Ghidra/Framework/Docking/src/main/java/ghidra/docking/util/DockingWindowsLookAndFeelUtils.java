@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,6 +24,7 @@ import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.plaf.ComponentUI;
 
+import com.bulenkov.darcula.DarculaLaf;
 import ghidra.docking.util.painting.GRepaintManager;
 import ghidra.framework.OperatingSystem;
 import ghidra.framework.Platform;
@@ -110,14 +111,14 @@ public class DockingWindowsLookAndFeelUtils {
 	}
 
 	/**
-	 * Set the look and feel (LAF) indicated by the string passed in as a parameter.  
-	 * The string value can be either the class name of the LAF, as returned by 
-	 * <code>LookAndFeelInfo.getClassName()</code> or the name as returned by 
+	 * Set the look and feel (LAF) indicated by the string passed in as a parameter.
+	 * The string value can be either the class name of the LAF, as returned by
+	 * <code>LookAndFeelInfo.getClassName()</code> or the name as returned by
 	 * <code>LookAndFeelInfo.getName()</code>.
 	 * <p>
 	 * Note: to be effective, this call needs to be made before any components have been created
 	 * and shown.
-	 * 
+	 *
 	 * @param lookAndFeelName the string indicating which look and feel is desired (see above)
 	 */
 	public static void setLookAndFeel(String lookAndFeelName) {
@@ -139,7 +140,7 @@ public class DockingWindowsLookAndFeelUtils {
 	}
 
 	/**
-	 * Returns all installed LaFs.  This will vary by OS. 
+	 * Returns all installed LaFs.  This will vary by OS.
 	 * @return all installed LaFs.
 	 */
 	public static List<String> getLookAndFeelNames() {
@@ -157,9 +158,10 @@ public class DockingWindowsLookAndFeelUtils {
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException,
 			UnsupportedLookAndFeelException {
 
-		String lookAndFeelClassName = findLookAndFeelClassName(lookAndFeelName);
-		UIManager.setLookAndFeel(lookAndFeelClassName);
-		fixupLookAndFeelIssues();
+//		String lookAndFeelClassName = findLookAndFeelClassName(lookAndFeelName);
+//		UIManager.setLookAndFeel(lookAndFeelClassName);
+//		fixupLookAndFeelIssues();
+		UIManager.setLookAndFeel((LookAndFeel) new DarculaLaf());
 	}
 
 	private static String findLookAndFeelClassName(String lookAndFeelName) {
@@ -308,7 +310,7 @@ public class DockingWindowsLookAndFeelUtils {
 	}
 
 	/**
-	 * Returns true if the given UI object is using the Aqua Look and Feel.  
+	 * Returns true if the given UI object is using the Aqua Look and Feel.
 	 * @param UI the UI to examine.
 	 * @return true if the UI is using Aqua
 	 */
@@ -319,7 +321,7 @@ public class DockingWindowsLookAndFeelUtils {
 	}
 
 	/**
-	 * Returns true if 'Nimbus' is the current Look and Feel  
+	 * Returns true if 'Nimbus' is the current Look and Feel
 	 * @return true if 'Nimbus' is the current Look and Feel
 	 */
 	public static boolean isUsingNimbusUI() {
