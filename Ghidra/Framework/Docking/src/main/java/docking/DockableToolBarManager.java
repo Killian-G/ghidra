@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,8 +32,8 @@ import resources.ResourceManager;
  * Manages to toolbar for the dockable components.
  */
 class DockableToolBarManager {
-	private static final ImageIcon CLOSE_ICON = ResourceManager.loadImage("images/close16.gif");
-	private static final ImageIcon MENU_ICON = ResourceManager.loadImage("images/menu16.gif");
+	private static final ImageIcon CLOSE_ICON = ResourceManager.loadImage("images/close_white16.gif");
+	private static final ImageIcon MENU_ICON = ResourceManager.loadImage("images/menu_white16.gif");
 
 	private GenericHeader dockableHeader;
 	private ToolBarManager toolBarManager;
@@ -54,7 +54,7 @@ class DockableToolBarManager {
 
 	/**
 	 * Constructs a new DockableToolBarManger for the given ComponentInfo
-	 * 
+	 *
 	 * @param dockableComponent the component to which this toolbar belongs
 	 * @param header the header to which this toolbar belongs
 	 */
@@ -177,8 +177,8 @@ class DockableToolBarManager {
 	}
 
 //==================================================================================================
-// Inner Classes	
-//==================================================================================================	
+// Inner Classes
+//==================================================================================================
 
 	/**
 	 * Action added to toolbar for "hiding" the component.
