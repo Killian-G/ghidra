@@ -65,7 +65,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 		iconLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
 		textLabel.setBorder(createOSSpecificBorder());
-		textLabel.setForeground(Color.WHITE);
+		textLabel.setForeground(new Color(0xEEEEEE));
 
 		setLayout(new BorderLayout());
 		add(textLabel, BorderLayout.CENTER);

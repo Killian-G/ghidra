@@ -56,7 +56,7 @@ public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 	public AbstractGCellRenderer() {
 		noFocusBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
 		Border innerBorder = BorderFactory.createEmptyBorder(0, 4, 0, 4);
-		Border outerBorder = BorderFactory.createLineBorder(Color.YELLOW, 1);
+		Border outerBorder = BorderFactory.createLineBorder(Color.WHITE, 1);
 		focusBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(noFocusBorder);
 
