@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -623,12 +623,12 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 			DataType dataType = (DataType) value;
 			Color color = isSelected ? table.getSelectionForeground() : table.getForeground();
 			if (!tableModel.isCellEditable(row, column)) {
-				color = isSelected ? Color.yellow : Color.gray;
+				color = isSelected ? Color.yellow : Color.gray;  // Theme-feature
 			}
 			if (dataType != null) {
 				setText(dataType.getName());
 				if (dataType.isNotYetDefined()) {
-					color = Color.red;
+					color = Color.red;  // Theme-feature
 				}
 				String toolTipText = ToolTipUtils.getToolTipText(dataType);
 				String headerText = "<HTML><b>" +
@@ -717,17 +717,17 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 				boolean isInvalidStorage =
 					!storage.isValid() || rowData.getFormalDataType().getLength() != storage.size();
 				if (isInvalidStorage) {
-					setForeground(Color.RED);
+					setForeground(Color.RED); // Theme-feature
 					setToolTipText("Invalid Parameter Storage");
 				}
 				else {
-					setForeground(isSelected ? Color.WHITE : Color.BLACK);
+					setForeground(new Color(0xEEEEEE)); // Theme-feature
 					setToolTipText("");
 				}
 				setText(storage.toString());
 			}
 			else {
-				setForeground(isSelected ? Color.WHITE : Color.BLACK);
+				setForeground(new Color(0xEEEEEE)); // Theme-feature
 				setText("");
 				setToolTipText(null);
 			}
@@ -751,7 +751,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 
 			ParameterTableModel tableModel = (ParameterTableModel) table.getModel();
 			if (!tableModel.isCellEditable(row, column)) {
-				setForeground(isSelected ? Color.yellow : Color.gray);
+				setForeground(isSelected ? Color.yellow : Color.gray); // Theme-feature
 			}
 			else {
 				if (isSelected) {
